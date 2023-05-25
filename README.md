@@ -1,2 +1,4 @@
 # logica-proyecto
-proyecto final lógica de programación...
+Buenos dias profesor Andres.
+Como amanecio.
+Gracias por su clase.

@@ -24,3 +24,24 @@ class Adivina_adivinador:
             print("Perdiste la palabra era:", self.palabra)
         else:
             print("¡Felicidades adivinaste! la palabra:", self.palabra)
+
+    def mostrar_palabra(self):
+        mostrar = ""
+        
+        for letra in self.palabra:
+            if letra in self.letras_encontradas:
+                mostrar += letra + " "
+            else:
+                mostrar += "_ "
+        
+        print("\n" + mostrar)
+    
+    def conseguir_letra(self):
+        while True:
+            letra = input("ingresa una letra: ").lower()
+            
+            
+            if len(letra) == 1 and letra.isalpha():
+                return letra
+            
+            print("Por favor ingrese una sola letra.")        

@@ -122,4 +122,30 @@ class Adivina_adivinador:
                 -
             """
        ]
-        print(casos[self.vidas])       
+        print(casos[self.vidas])
+        
+    def jugar_de_nuevo(self):
+        while True:
+            elegir = input("¿Quieres jugar de nuevo? (s/n): ").lower()
+            
+            if elegir == "s":
+                self.reiniciar_juego()
+                self.jugar()
+                self.jugar_de_nuevo()
+            elif elegir == "n":
+                return  False
+                break
+            else:
+                print("Opción inválida. Por favor, ingresa 's' para sí o 'n' para no.")
+
+    def reiniciar_juego(self):
+        self.palabras = ["manzana", "pera", "mango","piña", "poma", "ceresa", "coco", "kiwi", "limon", "banano", "maracuya", "mora", "sandia", "uva", "ciruela", "fresa", "papaya", "mandarina", "naranja", "lulo", "guanabana", "mamoncillo", "guayaba", "maracuya", "melocoton"]
+        self.palabra = random.choice(self.palabras)
+        self.letras_palabras = set(self.palabra)
+        self.letras_encontradas = set()
+        self.vidas = 6
+    
+    
+juego = Adivina_adivinador()
+juego.jugar()
+juego.jugar_de_nuevo()

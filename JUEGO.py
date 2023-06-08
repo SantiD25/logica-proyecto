@@ -44,4 +44,82 @@ class Adivina_adivinador:
             if len(letra) == 1 and letra.isalpha():
                 return letra
             
-            print("Por favor ingrese una sola letra.")        
+            print("Por favor ingrese una sola letra.") 
+    
+    def probar_letra(self, letra):
+        if letra in self.letras_palabras:
+            self.letras_palabras.remove(letra)
+            self.letras_encontradas.add(letra)
+            print("Correcto!")
+        else:
+            self.vidas -= 1
+            print("lo siento. Tienes", self.vidas, "vidas.")
+            self.mostrar_adivina_adivinador()
+
+    def mostrar_adivina_adivinador(self):
+        casos = [
+            """
+                --------
+                |      |
+                |      O
+                |     \\|/
+                |      |
+                |     / \\
+                -
+            """,
+            """
+                --------
+                |      |
+                |      O
+                |     \\|/
+                |      |
+                |     / 
+                -
+            """,
+            """
+                --------
+                |      |
+                |      O
+                |     \\|/
+                |      |
+                |      
+                -
+            """,
+            """
+                --------
+                |      |
+                |      O
+                |     \\|
+                |      |
+                |     
+                -
+            """,
+            """
+                --------
+                |      |
+                |      O
+                |      |
+                |      |
+                |     
+                -
+            """,
+            """
+                --------
+                |      |
+                |      O
+                |    
+                |      
+                |     
+                -
+            """,
+            """
+                --------
+                |      |
+                |      
+                |    
+                |      
+                |     
+                -
+            """
+       ]
+        print(casos[self.vidas])       
